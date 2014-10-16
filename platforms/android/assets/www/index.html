@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/ratchet/css/ratchet.css" rel="stylesheet">
+    <link href="css/pageslider.css" rel="stylesheet">
+
+    <title>Plnyze</title>
+  </head>
+  <body>
+    <div id="main">
+      <script id="home-tpl" type="text/template">
+        <header class="bar bar-nav">
+          <img class="logo-index" src="img/logo.svg">
+        </header>
+        <div class="content"></div>
+      </script>
+
+      <script id="articles-list-tpl"cordova plugin ls type="text/template">
+        <ul class="table-view">
+          {{#each this}}
+            <li class="card hand" onclick="location.href='#articles/{{id}}';return true;">
+              <h2 class="card-title" >{{title}}</h2>
+              <span class="author"> by {{user}} </span>
+              <span class="tm"> {{time}} </span>
+              {{{content}}}
+            </li>
+          {{/each}}
+        </ul>
+      </script>
+
+      <script id="article-tpl" type="text/template">
+        <header class="bar bar-nav">
+          <a class="btn btn-link btn-nav pull-left" href="#">
+            <span class="icon icon-left-nav"></span>
+          </a>
+          <h1 class="title">{{title}} </h1>
+        </header>
+        <div class="content">
+          <div class="expanded">
+            <div class="card">
+              <div class="card-content">
+                <span class="author">    by {{user}}   </span>
+                <span class="time">      {{time}}      </span>
+                <div  class="card-text"> {{{content}}} </div>
+              </div>
+            </div>
+          </div>
+          <div class="rel-div">
+            <ul class="table-view">
+              <h2 class="tit-rel">Related Articles</h2>
+              {{#each related_articles}}
+                <li class="card hand" onclick="location.href='#articles/{{id}}';return true;">
+                  <h2 class="card-title" >{{title}}</h2>
+                  <span> by {{user}} </span>
+                  <span> {{time}} </span>
+                  {{{content}}}
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </script>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/router.js"></script>
+    <script src="lib/pageslider.js"></script>
+    <script src="js/services/ArticlesService.js"></script>
+    <script src="js/ArticlesListView.js"></script>
+    <script src="js/ArticleView.js"></script>
+    <script src="js/HomeView.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+
+</html>
+
+
+

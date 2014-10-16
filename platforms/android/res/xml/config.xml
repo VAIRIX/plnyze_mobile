@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.vairix.plnyze_android" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <name>plnyze</name>
+    <description>
+        PLNyze is a tool for building Personal Learning Networks (PLNs). Is a microblogging tool to collect and store small pieces of knowledge (called cards) inside a topic folder.
+    </description>
+    <author email="ga@vairix.com" href="http://vairix.com">
+        vairix.com
+    </author>
+    <icon src="icon.png" />
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

@@ -1,0 +1,358 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#465e78;
+    background-image:linear-gradient(top, #465e78 0%, #465e78 51%);
+    background-image:-webkit-linear-gradient(top, #465e78 0%, #465e78 51%);
+    background-image:-ms-linear-gradient(top, #465e78 0%, #465e78 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #465e78),
+        color-stop(0.51, #465e78)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    color:white;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.table-view {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.card {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 6px;
+    margin-top: 13px;
+    padding: 5px;
+    margin-left: 0px;
+}
+
+.table-view li{
+    list-style-type: none;
+}
+
+.card-title {
+    color: #464f54;
+    font-size: 1.3em;
+    font-weight: 900;
+    transition: all 0.3s ease-out 0s;
+    text-decoration: none;
+}
+
+.link-card {
+    text-decoration: none;
+    color: black;
+}
+
+.complete-card {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 6px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 50px;
+    padding: 6px;
+}
+
+.logo-index {
+    margin-left: 43%;
+    width: 15%;
+    margin-top: 8px;
+}
+
+.tit-rel {
+    color: white;
+    margin-top: 11px;
+    text-align: center;
+}
+
+
+.hand {
+    cursor: pointer;
+}
+
+.card-text{
+    margin-top: 5px
+}
+
+/* Start Expanded card */
+.expanded{
+  clear: both;
+  position: relative;
+  width: 100%;
+}
+.expanded .card{
+  margin: 0 auto;
+  height: auto;
+  min-width:100%;
+  min-height: 450px;
+}
+.expanded .card-content{
+  padding: 17px 0 0 0;
+  margin: 0px;
+}
+.expanded .card-content > *{
+  margin: 0px 0px 0px 10px;
+}
+.expanded .card-content h1{
+  padding-top: 1px;
+  font-size: 1.8em;
+  margin-left: 7px;
+}
+.expanded .card-content h1>a{
+  color: #464F54;
+  font-weight: 900;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.expanded .card-content h1>a:hover{
+  color: #4FC6F8;
+  text-decoration: none;
+}
+
+.expanded .card-text h1 {
+  font-size: 1.7em;
+  margin-left: 0px;
+}
+.expanded .card-text h2 {
+  font-size: 1.5em;
+}
+.expanded .card-text h3 {
+  font-size: 1.33em;
+}
+.expanded .card-text h4 {
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+.expanded .card-text h5 {
+  font-size: 0.9em;
+}
+.expanded .card-text h6 {
+  font-size: 0.76em;
+}
+.expanded .card-text ul {
+  list-style: outside;
+  margin-left: 30px;
+  color: #777;
+  font-size: 14px;
+  list-style: disc outside none;
+}
+.expanded .card-text ol {
+  list-style: decimal;
+  margin-left: 30px;
+}
+.expanded .card-text pre {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-size: 12px;
+  background-color: #F5F5F5;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  display: block;
+  font-size: 12.025px;
+  line-height: 18px;
+  margin: 3px 0 9px;
+  padding: 8.5px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.expanded .card-text pre code {
+  background-color: transparent;
+  border: 0 none;
+  color: inherit;
+  padding: 0;
+}
+.expanded .card-text code {
+  background-color: #F5F5F5;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+.expanded .card-text p img{
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.expanded .card-text blockquote{
+  margin-right: 2px;
+}
+.expanded .card-text blockquote p {
+  color: #424242;
+  font-family: serif;
+  letter-spacing:0.1em;
+  text-align:center;
+  margin: 15px 15px;
+  font-size: 14pt;
+  font-variant: small-caps;
+}
+.expanded .card-text blockquote p>a {
+  color: #8d8d8d;
+}
+.expanded .card-text blockquote p>a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.expanded .card-text q{
+  display:inline;
+  font-style: italic;
+}
+.expanded .card-text q::before{
+  content: open-quote;
+}
+.expanded .card-text q::after{
+  content: close-quote;
+}
+
+.expanded .card-text cite{
+  margin-right: 2px;
+  font-size: 0.8em;
+  text-align: right;
+  color: #b3b3b3;
+}
+.expanded .card-text cite a {
+  color: #8d8d8d;
+}
+.expanded .card-text cite a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.expanded .card-text strong {
+  font-weight: bold;
+}
+.expanded .card-text em {
+  font-style: italic;
+}
+.expanded .card-text sup{
+  vertical-align: super;
+  font-size: 0.6em;
+}
+.expanded .card-text sub{
+  vertical-align: sub;
+  font-size: 0.6em;
+}
+.expanded .card-text > ol, .expanded .card-text > ul {
+  margin-top: -18px;
+}
+.expanded .card-text p, .expanded .card-text div, .expanded .card-text > ol, .expanded .card-text > ul,
+.expanded .card-text h1,.expanded .card-text h2, .expanded .card-text h3, .expanded .card-text h4, .expanded .card-text h5{
+  margin-bottom: 18px;
+}
+.expanded .w-img{
+  width: 295px;
+}
+.expanded .w-img .card-content, .expanded .card .card-content{
+  width: 95%;
+}
+.expanded .w-img .card-text{
+  /*padding: 0px 50px 50px 0px;
+  width: 100%;*/
+  /*float: left;
+  margin-top: 10px*/
+}
+.expanded .w-img .card-expanded-img{
+  float: right;
+  max-width: 615px;
+  max-height: 615px;
+  padding: 8px;
+}
+.expanded .generic-icon{
+  background: url(asset-path(''));
+}
+
+.card-content .author {
+    color: #464646;
+    display: block;
+    font-size: 14px;
+    font-weight: 200;
+    margin-top: 5px;
+}
+
+.card-content .time {
+    color: #bcc1c4;
+    display: block;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.card-content .card-text {
+    padding-top: 10px;
+}
+
+/* End expanded card */
